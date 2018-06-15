@@ -1,0 +1,25 @@
+
+<div class="col-md-9 postform ">
+
+	<p><%= f.label 'Заголовок: ' %><br>
+	<%= f.text_field :title, class: "form-input" %></p>
+
+
+	<p><%= f.label 'Фото: ' %><br>
+	<%= f.file_field :image, class: "inputfile" %></p><br>
+
+	<p><%= f.label 'Дата початку: ' %><br>
+	<%= f.datetime_field :begin_event, class: "form-input" %></p>
+
+	<p><%= f.label 'Дата завершення: ' %><br>
+	<%= f.datetime_field :end_event, class: "form-input" %></p>
+
+
+	<br><p><%= f.label 'Текст: ' %><br>
+	<%= f.text_area :body, :class => "tinymce", cols: 20, rows: 15 %></p>
+	<%= tinymce %>
+
+	<br><p><%= f.submit "Опублікувати" %></p>
+
+</div>
+

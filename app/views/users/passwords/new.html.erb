@@ -1,0 +1,21 @@
+<div class="col-md-9 col-md-offset-1 login">
+    <div class="log">
+		<h3 class="tittle">Забули пароль?</h3>
+<%= form_for(resource, as: resource_name, :validate => true, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <h5><%= f.label 'Введіть Ваш Email: ' %></h5>
+    <%= f.email_field :email, autofocus: true, class: "form-input" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Отримати інструкції для відновлення" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
+<br><br>
+
+	</div>
+</div>

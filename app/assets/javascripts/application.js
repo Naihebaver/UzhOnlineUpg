@@ -1,0 +1,82 @@
+// This is a manifest file that'll be compiled into application.js, which will include all the files
+// listed below.
+//
+// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, or any plugin's
+// vendor/assets/javascripts directory can be referenced here using a relative path.
+//
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// compiled file. JavaScript code in this file should be added after the last require_* statement.
+//
+// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
+// about supported directives.
+//
+
+//= require jquery
+//= require tinymce-jquery
+//= require bootstrap-sprockets
+//= require rails-ujs
+//= require turbolinks
+//= require rails.validations
+//= require_tree .
+
+
+$(document).on('turbolinks:request-end', function() {
+  if (tinyMCE) { tinyMCE.remove(); }
+});
+
+
+$(document).ready(function() {
+
+
+(checkAndRepaint)();
+window.onresize = checkAndRepaint;
+function checkAndRepaint() {
+    if (window.screen.availWidth <= 1024) {
+         $(".navbar-brand").text("UZH online");
+         $(".top-nav").hide();
+         $('.category').css({visibility: 'visible'});
+         $('img').addClass('img-responsive');
+
+        }
+    }
+
+
+
+var winHeight = $(document).outerHeight();
+var navHeight = $('.top-header').outerHeight();
+var height = winHeight - navHeight;
+
+
+$('.top-nav').css({
+
+	   'height': height,
+    });
+
+
+ document.addEventListener("scroll", function(){
+   
+   (checkAndRepaint)();
+window.onresize = checkAndRepaint;
+function checkAndRepaint() {
+    if (window.screen.availWidth <= 1024) {
+         $(".navbar-brand").text("UZH online");
+         $(".top-nav").hide();
+         $('.category').css({visibility: 'visible'});
+         $('img').addClass('img-responsive');
+
+        }
+    }
+
+
+    var winHeight = $(document).outerHeight();
+    var navHeight = $('.top-header').outerHeight();
+    var height = winHeight - navHeight;
+
+        $('.top-nav').css({
+  
+        'height': height,
+        });
+  
+    });
+
+});

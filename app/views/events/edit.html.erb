@@ -1,0 +1,10 @@
+<%= form_for :event, url: event_path, method: :patch do |f|%>
+	<% if @event.errors.any? %>
+		<% @event.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+	<% end %>
+<% end %>
+
+<%= render 'events/form' , f:f %>
+
+<% end %>

@@ -1,0 +1,39 @@
+<% @events.each do |event| %>
+
+<div class="article">
+ 
+  <% if Time.now < event.begin_event and Time.now < event.end_event %>
+  
+	 <%= image_tag event.image.url, height: 180 %>
+     <h5 class="top"><%= link_to truncate(event.title, length: 40) , event_path(event.id)%>
+
+        <% if user_signed_in? and current_user.moderator? %>
+    		<small>
+    		<%= link_to edit_event_path(event.id) do %><span class="glyphicon glyphicon-pencil post-button"></span><% end %>
+    		<%= link_to event_path(event.id), data: {confirm: 'Ви впевнені?'}, method: :delete do %> <span class="glyphicon glyphicon-trash post-button"></span><% end %>
+    		</small>
+  		<% end %> 
+	 </h5>
+
+	<!-- <p class="event-info">
+		Початок: <%= event.begin_event.strftime('%d.%m.%y %H:%M') %> |
+		Кінець: <%= event.end_event.strftime('%d.%m.%y %H:%M') %>
+	</p> -->
+
+	<p class="event-info">
+		( <%= event.begin_event.strftime('%d.%m.%y %H:%M') %> -
+		 <%= event.end_event.strftime('%d.%m.%y %H:%M') %> )
+	</p>
+
+	<p class="event-info">До початку залишилось: <%= distance_of_time_in_words(Time.now, event.begin_event, false) %></p>
+    <p><%= truncate(strip_tags(event.body), length: 100) %></p>
+
+    <p class="article-info"><%= event.created_at.strftime('%b %d, %Y в %H:%M') %>
+    <%= link_to event_path(event.id) do %><span class="glyphicon glyphicon-circle-arrow-right"></span><% end %>
+    </p> 
+  
+  <% end %>
+
+</div>
+
+<% end %>

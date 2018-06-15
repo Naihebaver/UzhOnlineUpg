@@ -1,0 +1,37 @@
+<div class="col-md-10 login">
+   <div class="col-md-6 log">
+          <h3 class="tittle">Вхід <i class="glyphicon glyphicon-lock"></i></h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+          <p>Якщо у Вас ще нема аккаунта, <a href="<%= new_user_registration_path %>">нажміть сюди</a></p>
+<%= form_for(resource, as: resource_name, :validate => true, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <h5><%= f.label 'Email: ' %></h5>
+    <%= f.email_field :email, autofocus: true, class: "form-input" %>
+  </div>
+
+  <div class="field">
+     <h5><%= f.label 'Пароль: ' %></h5>
+    <%= f.password_field :password, autocomplete: "off", class: "form-input" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label "Запам'ятати", class: "label" %>
+    </div><br>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "Увійти" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
+
+</div>
+<div class="col-md-6 login-right">
+           <h3 class="tittle">Реєстрація <i class="glyphicon glyphicon-file"></i></h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>  
+          <%= link_to "Створити аккаунт" , new_user_registration_path, class: "hvr-bounce-to-bottom button" %>
+      </div>
+  </div>

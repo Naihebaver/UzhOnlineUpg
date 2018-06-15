@@ -1,0 +1,160 @@
+<div class="col-md-8 top-text section1 showarticle">
+
+ <div class="banner-section">
+    <h3 class="tittle"><%= @post.category.name %> <i class="glyphicon glyphicon-file"></i></h3>
+      <div class="single">
+         <%= image_tag @post.image.url, width: 745, height: 400, class: "img-responsive" %>
+          <div class="b-bottom"> 
+            
+            <h5 class="top"><a href="#"><%= @post.title %></a>
+            <% if user_signed_in? and current_user.moderator? %>
+            <small>
+              <%= link_to edit_post_path(@post.id) do %><span class="glyphicon glyphicon-pencil post-button"></span><% end %>
+              <%= link_to post_path(@post.id), data: {confirm: 'Ви впевнені?'}, method: :delete do %> <span class="glyphicon glyphicon-trash post-button"></span><% end %>
+            </small>
+            <% end %> 
+            </h5>
+
+            <p class="sub"><%= @post.body.html_safe %></p>
+            <p><%= @post.created_at.strftime('%b %d, %Y в %H:%M') %> 
+            <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>
+            <%= @post.postcomments.count %></a>
+            <a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>
+            <%= @post.impressionist_count(:filter=>:session_hash) %></a></p>
+         
+        </div>
+       </div>
+
+
+      <div class="single-bottom">
+            <div class="single-middle">
+              <ul class="social-share">
+                <li><span>SHARE</span></li>
+                <li><a href="#"><i> </i></a></li>           
+                <li><a href="#"><i class="tin"> </i></a></li>
+                <li><a href="#"><i class="message"> </i></a></li>       
+              </ul>
+             <a href="#"><i class="arrow"> </i></a>
+             <div class="clearfix"> </div>
+            </div>
+
+      </div>
+
+
+
+
+
+
+    <div class="response">
+          <h4>Коментарі</h4>
+          	<% @comments.each do |comment| %>
+          <div class="media response-info">
+            <div class="media-left response-text-left">
+              <a href="#">
+                <%= image_tag comment.user.avatar.url, width: 80, height: 80, class: "img-circle media-object" %>
+              </a>
+              <h5><a href="#"><%= comment.user.nickname %></a></h5>
+            </div>
+            <div class="media-body response-text-right">
+              <p><%= comment.comment %></p>
+              <ul>
+                <li><%= comment.created_at.strftime('%b %d, %Y в %H:%M') %> </li>
+
+
+              <% if user_signed_in? and current_user.id == comment.user_id %>
+                <li><%= link_to edit_post_postcomment_path(@post, comment) do %><span class="glyphicon glyphicon-pencil post-button"></span><% end %></li>
+                
+                <li><%= link_to post_postcomment_path(@post, comment), data: {confirm: 'Ви впевнені?'}, method: :delete do %> <span class="glyphicon glyphicon-trash post-button"></span><% end %></li>
+               <% end %>
+              </ul>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+          <hr>
+      <% end %>
+  </div> 
+
+    <div class="coment-form">
+           <% if user_signed_in? %>
+              <h4>Залиш свій коментар</h4>
+              <%= form_for :postcomment, url: post_postcomments_path(@post.id), method: :post do |f| %>
+              <%= f.text_area :comment, :placeholder => "Твій коментар..." %>
+              <%= f.submit "Надіслати" %>
+              <% end %>
+            <% else %>
+              <div class="comment-danger">
+                Щоб прокоментувати статтю Ви повинні <a href= <%=  new_user_session_path %> >Увійти</a> в свій аккаунт!
+              </div>
+            <% end %>
+
+    </div>  
+
+
+
+</div>
+
+</div>
+
+
+
+ <div class="col-md-2 top-text section2">
+    <h3 class="tittle">Останні новини <i class="glyphicon glyphicon-time"></i></h3>
+      <% @lastposts.each do |post| %>
+              <div class="editor-pics">
+                  <div class="col-md-3 col-xs-3 item-pic">
+                      <%= image_tag post.image.url, class: "image" %>
+                  </div>
+                  <div class="col-md-9 col-xs-9 item-details">
+                        
+                      <h5 class="inner two"><%= link_to truncate(post.title, length: 40) , post_path(post.id)%></h5>
+
+                        <div class="td-post-date two">
+
+                          <i class="glyphicon glyphicon-time"></i><%= custom_format(post.created_at) %>
+                          <i class="glyphicon glyphicon-comment"></i><%= post.postcomments.count %>
+                          <i class="glyphicon glyphicon-eye-open"></i><%= post.impressionist_count(:filter=>:session_hash) %>
+                           
+                        </div>
+                  </div>
+                <div class="clearfix"></div>
+            </div>
+      <% end %>
+
+
+
+
+
+<div class="events">
+
+
+  <h3 class="tittle">Важливі події <i class="glyphicon glyphicon-globe"></i></h3>
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#menu1">Скоро</a></li>
+    <li><a data-toggle="tab" href="#menu2">Тривають</a></li>
+    <li><a data-toggle="tab" href="#menu3">Завершені</a></li>
+  </ul>
+
+  <div class="tab-content">
+
+
+    <div id="menu1" class="tab-pane fade in active">
+        <%= render 'events/startevent' %>
+    </div>
+
+    <div id="menu3" class="tab-pane fade">
+       <%= render 'events/endevent' %>
+    </div>
+
+    <div id="menu2" class="tab-pane fade">
+        <%= render 'events/contevent' %>
+    </div>
+
+
+
+  </div> 
+
+</div> 
+
+
+</div>

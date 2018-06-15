@@ -1,0 +1,53 @@
+
+.footer {
+      padding: 2em 0;
+    background-color: #111;
+}
+.footer-grid h4 {
+    color: #fff;
+    font-size: 1.8em;
+}
+ul.bottom{
+ margin-top:1.6em;
+}
+ul.bottom li {
+    list-style: none;
+    display: block;
+    margin-bottom: 1em;
+      color: #707073;
+    font-size: 0.9em;
+}
+ul.bottom li a{
+ color: #707073;
+    font-size:1em;
+}
+ul.bottom li a:hover {
+    color: #f13d39;
+}
+ul.bottom i {
+    color: #fff;
+    margin-right: 0.5em;
+}
+.copy {
+    text-align: center;
+    background: #1666c0;
+    padding: 1em;
+  }
+.copy p {
+  color: #fff;
+  font-size: 0.9em;
+}
+.copy p a {
+   color: #f13d39;
+}
+.copy p a:hover{
+   text-decoration: underline;
+}
+
+.footer, .copy {
+    width: 87%;
+}
+
+.footer-top {
+    padding-left: 50px;
+}

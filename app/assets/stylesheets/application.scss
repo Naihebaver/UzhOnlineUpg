@@ -1,0 +1,401 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "navbar";
+@import "login";
+@import "posts";
+@import "events";
+@import "footer";
+
+
+
+.field_with_errors .message {
+  color: red;
+  /*display: flex;
+  margin-top: -20px;*/
+  margin-left: 5px;
+}
+
+.field {
+  margin: 10px 0;
+}
+
+
+input[type="button"],input[type="submit"],li.parallelogram{
+  transition:0.5s all;
+  -webkit-transition:0.5s all;
+  -moz-transition:0.5s all;
+  -o-transition:0.5s all;
+  -ms-transition:0.5s all;
+}
+h1,h2,h3,h4,h5,h6{
+   margin:0;    
+  /* font-family: 'Montserrat-Regular';*/
+   font-weight:700;
+
+} 
+
+ul{
+  margin:0;
+  padding:0;
+}
+label{
+  margin:0;
+}
+
+
+a, a:link{
+  text-decoration : none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Effect 16: fall down */
+ .cl-effect-16 a {
+  color: #6f8686;
+  text-shadow: 0 0 1px rgba(111,134,134,0.3);
+}
+.cl-effect-16 a::before {
+  color:#ffcc00;
+  content: attr(data-hover);
+  position: absolute;
+  opacity: 0;
+  text-shadow: 0 0 1px rgba(255,255,255,0.3);
+  -webkit-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+  -moz-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+  transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  pointer-events: none;
+}
+.cl-effect-16 a:hover::before,
+.cl-effect-16 a:focus::before {
+  -webkit-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+  -moz-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+  transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+  opacity: 1;
+}
+/* Effect 16: fall down */
+
+
+
+
+
+
+.top-nav{
+    background-color: red;
+    /*padding: 3em 1em 71.3em 1em;*/
+    padding: 3em 1em 3em 1em;
+    width: 13%;
+
+}
+
+.logo  a h1{
+    color: #fff;
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center;
+}
+.logo  a h1:hover{
+ text-decoration:none;
+}
+.logo  a h1 span{
+ color:#a5cd39;
+}
+
+.top-menu ul {
+    margin-top: 6em;
+}
+
+.top-menu ul li {
+    display:block;
+    color: #fff;
+    vertical-align: top;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+.top-menu ul li a{
+    color: #fff;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 1em 1em;
+    background: none;
+    background-color: red;
+}
+
+
+
+ul.side-icons{
+    border: none;
+    margin-top: 5em;
+    margin-left: 1.6em;
+}
+ul.side-icons li {
+  list-style-type: none;
+  display: inline-block;
+  margin-right:5px;
+}
+ul.side-icons li a{
+  width:24px;
+  height:24px;
+  display:block;
+  border:none;
+  padding:0
+}
+ul.side-icons li a:hover{
+ opacity:0.4;
+}
+ul.side-icons li a.fb{
+ background:url('icons.png') no-repeat 0px 0px;
+}
+ul.side-icons li a.twitt{
+ background:url('icons.png') no-repeat -26px 0px;
+}
+ul.side-icons li a.goog{
+ background:url('icons.png') no-repeat -52px 0px;
+}
+
+
+
+
+.section1 {
+   padding: 2em 0em 1.5em 0em;
+   width: 60%;
+   border-right: 1px solid #ddd;
+}
+
+.section2 {
+  width: 27%;
+  padding: 2em 1em 1.5em 1em;
+ 
+}
+
+
+.article {
+  margin-bottom: 2em;
+}
+
+.showarticle {
+  padding: 2em 1em;
+}
+
+
+h3.tittle {
+  color: #333;
+  font-size: 1.7em;
+  text-align:left;
+  margin-left: 0.6em;
+  margin-bottom: 1em;
+}
+h3.tittle i {
+    font-size: 0.7em;
+    color: red;
+}
+h5.top a {
+    line-height: 1.6em;
+    font-size: 1.4em;
+    color: #1e88e5;
+    font-weight: 300;
+}
+h5.top a:hover{
+    color: red;
+}
+span.glyphicon.glyphicon-comment:hover, span.glyphicon.glyphicon-eye-open:hover, span.glyphicon.glyphicon-thumbs-up:hover, a.span_link {
+    color: #000008;
+}
+span.glyphicon.glyphicon-comment, span.glyphicon.glyphicon-eye-open, span.glyphicon.glyphicon-thumbs-up {
+    font-size: 10px;
+    margin: 0 4px 0 20px;
+    color: #CCCBC6;
+}
+span.glyphicon.glyphicon-circle-arrow-right {
+    color: red;
+    margin-left: 1em;
+    margin-top: -2px;
+    vertical-align: middle;
+}
+span.glyphicon.glyphicon-circle-arrow-right:hover{
+color:#1e88e5;
+}
+.b-bottom {
+    margin-top: 1em;
+}
+
+
+
+.top-text img {
+    margin-bottom: 0.7em;
+
+}
+.top-inner.second {
+    margin-top: 1.3em;
+}
+.top-text.two{
+ padding-right: 0;
+   padding-left:15px;
+}
+.top-news {
+    padding: 2em 0;
+}
+.top-text p {
+    /*font-size: 1em;*/
+    font-weight: 400;
+    line-height: 1.9em;
+    /*color: #2f2f2f;*/
+}
+
+
+
+.editor-pics {
+    
+    /*margin: 2em 0em;*/
+  margin-top: 1em;
+}
+.item-pic {
+    padding: 0;
+}
+.td-post-date.two i {
+    margin-left: 0.7em;
+    margin-right: 0.7em;
+    font-size: 0.9em;
+}
+
+.td-post-date.two i:first-child { margin-left: 0 !important; }
+
+
+i.glyphicon.glyphicon-comment {
+    margin-left: 0.5em;
+}
+h5.inner.two a {
+    color: #1e88e5;
+    font-weight:400;
+    text-transform: none;
+    font-size: 1.1em;
+      line-height: 1.5em;
+}
+.td-post-date.two, .td-post-date.two a {
+    color: #777;
+    margin-top: 0.5em;
+    font-size: 0.9em;
+}
+.td-post-date.two i {
+  color: #CECDCD;
+}
+.td-post-date.two i:hover,.td-post-date.two a:hover{
+ color:#000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:1024px){
+
+  .col-md-2 {
+    width: 100%;
+  }
+
+  .col-md-8 {
+    width: 100%;
+  }
+
+  .footer, .copy {
+    width: 100%;
+  }
+
+/*  .item-pic {
+    width: 100%;
+  }
+
+  .item-details{
+    width: 100%;
+  }*/
+
+}
+
+@media (max-width:1024px){
+  .navbar-inverse .navbar-nav>li>a {
+    font-size: 0.5em;
+  }
+}
+
+
+@media (max-width:640px){
+  .navbar-inverse .navbar-nav>li>a {
+    font-size: 0.9em;
+  }
+}
+
+
+.category {
+  visibility: hidden;
+}
+
+iframe {
+  width: 100%;
+}
+
+.article-info {
+  color: #777 !important;
+}
+
+.event-info {
+  color: #777;
+  font-style: italic;
+  font-size: 0.9em;
+  margin: 7px 0;
+}
+
+
+.section1 .image {
+  height: 187px;
+    width: 358px;
+    object-fit: cover;
+}
+
+.section2 .image {
+  height: 65px;
+    width: 80px;
+    object-fit: cover;
+}

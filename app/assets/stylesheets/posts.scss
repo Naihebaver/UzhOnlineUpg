@@ -1,0 +1,323 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.notice{
+	color: red;
+	margin: 10px 0;
+}
+
+.postform{
+  padding: 5em 6em;
+  width: 87%;
+}
+.postform label{
+    color: #f13d39;
+    font-size: 16px;
+    text-transform: capitalize;
+    margin: 0 0 10px 0;
+    font-weight: 400;
+}
+
+.postform input.form-input{
+  width: 100%;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+}
+
+
+.postform .field_with_errors .message {
+  color: red;
+  display: flex;
+  margin-top: 0px;
+  font-size: 13px;
+  font-weight: bold;
+
+}
+
+.category-field {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.category-field:hover {
+    color: #333;
+    background-color: #fff;
+    border-color: #adadad;
+}
+
+.category-field:active, .category-field:focus {
+    color: #333;
+    background-color: #fff;
+    border-color: #adadad;
+}
+
+.category-field:active:focus {
+    color: #333;
+    background-color: #fff;
+    border-color: #adadad;
+    outline: none;
+    box-shadow: none;
+}
+
+.post-button {
+  margin: 0 5px;
+  color: #f13d39;
+}
+
+
+
+
+
+
+
+
+
+.banner-section{
+     
+}
+
+.b-bottom {
+    margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+p.sub {
+    line-height: 1.9em;
+    font-size: 0.9em;
+    color: #777;
+  margin-bottom: 1em;
+}
+ul.share {
+  margin: 2em 0 3em 0;
+}
+ul.social-share {
+    float: left;
+}
+.single-middle {
+   background: #f4f4f4;
+    padding: 1.5em;
+    margin: 2em 0;
+}
+ul.social-share li{
+list-style:none;
+display:inline-block;
+}
+ul.social-share li i,i.arrow,p.reply {
+       background: url(icons2.png)no-repeat -4px -3px;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    margin: 0 12px;
+    vertical-align: middle;
+}
+ul.social-share li  i.tin:hover,ul.social-share li  i.message:hover,p.reply i:hover,i.arrow:hover,ul.social-share li i:hover{
+  opacity:0.7;
+}
+ul.social-share li  i.tin{
+      background: url(icons2.png)no-repeat -30px -3px;
+}
+ul.social-share li  i.message{
+     background: url(icons2.png)no-repeat -55px -3px;
+}
+i.arrow{
+  background: url(icons2.png)no-repeat -79px -3px;
+    display: inline-block;
+    float: right;
+}
+p.reply i{
+      background: url(icons2.png)no-repeat -4px -3px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 14px 0 0px;
+}
+.client {
+  float:left;
+  width:8%;
+  margin-right:7%;
+}
+.client img {
+  width:100%;
+  border-radius:50%;
+  -web-kit-border-radius:50%;
+  -o-border-radius:50%;
+  -ms-border-radius:50%;  
+}
+.client-message {
+  float:left;
+  width:70%;
+}
+.blog-posts h3 {
+    line-height: 1.5em;
+    font-size: 2.1em;
+    font-weight: 400;
+}
+.blog-posts iframe {
+  width:100%;
+  height:400px;
+}
+.client-message i.fa.fa-calendar {
+  font-size: 10px;
+  margin-right: 6px;
+  vertical-align: baseline;
+}
+.response h4 {
+    color: #333;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 1.5em;
+}
+.coment-form input[type="text"] {
+    display: block;
+    background: none;
+    color: #777;
+    border: 1px solid #ddd;
+    width: 70%;
+    margin-bottom: 5px;
+    outline: none;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 13px 15px;
+  font-family: 'Open Sans', sans-serif;
+}
+.coment-form input[type="submit"] {
+    background: #1567c0;
+    border: 1px solid #1567c0;
+    padding: .8em 0;
+    width: 30%;
+    margin-top: .5em;
+    font-size: 15px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    outline: none;
+    transition: .5s all;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    -ms-transition: .5s all;
+  font-family: 'Open Sans', sans-serif;
+  text-transform:uppercase;
+}
+.coment-form input[type="submit"]:hover{
+   background:#f13d39;
+    border: 1px solid #f13d39;
+}
+.coment-form input[type="email"] {
+    background: none;
+    color: #777;
+    border: 1px solid #ddd;
+    width: 70%;
+    margin-bottom: 5px;
+    outline: none;
+    font-size: 13px;
+        font-weight: 400;
+    padding: 13px 15px;
+  font-family: 'Open Sans', sans-serif;
+}
+.coment-form textarea {
+    background: none;
+    color: #777;
+    border: 1px solid #ddd;
+    width: 100%;
+    display: block;
+    height: 150px;
+    outline: none;
+    font-size: 13px;
+       font-weight: 400;
+    resize: none;
+    padding: 13px 15px;
+  font-family: 'Open Sans', sans-serif;
+}
+.coment-form h4 {
+ color: #333;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+.media-left.response-text-left {
+    float: left;
+    width: 19%;
+}
+.response-text-right p {
+    color: #777;
+    font-size:0.9em;
+    margin: 0 0 1em;
+  line-height:1.9em;
+}
+.media-body.response-text-right ul li {
+    color: #f13d39;
+    font-size: 0.9em;
+    display: inline-block;
+        font-weight: 400;
+}
+.media-body.response-text-right ul li a {
+    color:#1567c0;
+    font-size: 1em;
+    display: block;
+    margin-top: 6px;
+    margin-left: 1em;
+}
+.media-body.response-text-right {
+    float: right;
+    width: 77%;
+    text-align: left;
+}
+.media-left.response-text-left h5 a {
+    color: #1567c0;
+    font-weight: 400;
+    line-height: 2em;
+}
+.coment-form {
+  margin-top: 3em;
+  padding-bottom:1em;
+}
+.media-left.response-text-left a img {
+    border-radius:50%;
+  -o-border-radius:50%;
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;
+  -ms-border-radius:50%;
+}
+.media-body.response-text-right ul li a:hover {
+    text-decoration: none;
+    color: #f13d39;
+}
+
+
+
+.coment-form2 {
+   margin: 5em 10em 10em 18em;
+}
+
+.coment-form2 textarea {
+    background: none;
+    color: #777;
+    border: 1px solid #ddd;
+   width: 80%;
+    display: block;
+    height: 150px;
+    outline: none;
+    font-size: 13px;
+       font-weight: 400;
+    resize: none;
+    padding: 13px 15px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.comment-danger {
+  background-color: #f4f4f4;
+  color: #f13d39;
+  padding: 2em 1.5em;
+}

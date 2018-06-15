@@ -1,0 +1,10 @@
+<div class="coment-form2">
+   <h4>Редагування коментаря</h4>
+
+<%= form_for([@post, @comment]) do |f| %>
+
+	<%= render 'postcomments/form' , f:f %>
+
+<% end %>
+
+</div>

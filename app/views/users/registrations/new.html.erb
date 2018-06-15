@@ -1,0 +1,43 @@
+<div class="col-md-9 col-md-offset-1 login">
+    <div class="log">
+        <h3 class="tittle">Реєстрація <i class="glyphicon glyphicon-file"></i></h3>
+        <p>Після проходження реєстрації Ви зможете коментувати статті.</p>
+        <p>Якщо у Вас уже є аккаунт нажміть, <%= link_to "Увійти" , new_user_session_path %></a></p>
+
+<%= form_for(resource, :as => resource_name, :validate => true, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <h5><%= f.label "Введіть Ваше Ім'я:" %></h5>
+    <%= f.text_field :nickname, autofocus: true, class: "form-input" %>
+  </div>
+
+  <div class="field">
+    <h5><%= f.label 'Фотографія: ' %></h5>
+    <%= f.file_field :avatar, class: "inputfile" %>
+  </div><br>
+
+  <div class="field">
+    <h5><%= f.label 'Введіть Email: ' %></h5>
+    <%= f.email_field :email, autofocus: true, class: "form-input" %>
+  </div>
+
+  <div class="field">
+    <h5><%= f.label 'Введіть пароль: ' %></h5>
+    <%= f.password_field :password, autocomplete: "off", :validate => {:confirmation => true}, class: "form-input" %>
+  </div>
+
+  <div class="field">
+    <h5><%= f.label 'Введіть пароль ще раз: ' %></h5>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-input" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Створити аккаунт" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
+
+    </div>
+</div>
